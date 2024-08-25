@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-header">
+            <form class="weather-search">
+                <input type="text" placeholder="Search for a city..." class="weather-searchform">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </form>
+            <div class="weather-units">
+                <button class="btn search-btn">Search</button>
+            </div>
+        </div>
+        <div class="weather-body">
+            <p class="loading">loading...! Please Wait</p>
+            <p class="error"></p>
+            <div class="show-weather">
+                <h1 class="weather-city">City Name</h1>
+            <div class="weather-datetime">
+                Sunday, August 25, 2024 at 6:11 PM
+            </div>
+            <h1 class="weather-temperature">0&#176</h1>
+            <div class="weather-name-icon">
+                <div class="weather-forecast-text"></div>
+                <div class="weather-icon"></div>
+            </div>
+            </div>
+            
+            <!-- <div class="weather">
+                <p>Min: 12&#176</p>
+                <p>Max: 16&#176</p>
+            </div> -->
+        </div>
+
+        <div class="weather-forcast-body">
+            
+        </div>
+     
+
+        <div class="weather-info">
+            <div class="weather-card">
+                <i class="fa-solid fa-temperature-full"></i>
+                <div>
+                    <p>Real Feel</p>
+                    <p class="weather-realfeel">18&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-droplet"></i>
+                <div>
+                    <p>Humidity</p>
+                    <p class="weather-humidity">18&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-wind"></i>
+                <div>
+                    <p>Wind</p>
+                    <p class="weather-wind">18&#176</p>
+                </div>
+            </div>
+            <div class="weather-card">
+                <i class="fa-solid fa-gauge-high"></i>
+                <div>
+                    <p>Pressure</p>
+                    <p class="weather-pressure">18&#176</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a692e1c39f.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
