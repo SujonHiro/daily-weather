@@ -56,7 +56,7 @@ body {
   border-radius: 10px;
   background-color: var(--container-color);
   color: #ffffff;
-  min-width: 400px;
+ 
 }
 .weather-search input::placeholder {
   color: #ffffff;
@@ -87,7 +87,7 @@ body {
 }
 .weather-forcast-body {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   margin-top: 1rem;
   color: white;
@@ -104,6 +104,7 @@ body {
   border-radius: 10px;
   text-align: center;
   max-width: 120px;
+  margin: auto;
 }
 .loading{
     display: none;
@@ -151,12 +152,61 @@ body {
   opacity: 0.8;
 }
 
-@media screen and (max-width: 701px) {
-  .container {
-    width: 90%;
+@media screen and (max-width: 992px) {
+    .container {
+      width: 90%;
+    }
+    .weather-header {
+      flex-direction: column; 
+    }
+    .weather-forcast-body {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+  
+    .weather-info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
   }
-  .weather-header {
-    flex-direction: column;
-    margin: 0 20px;
+
+@media screen and (max-width: 780px) {
+    .container {
+      width: 85%;
+    }
+    .weather-header {
+      flex-direction: column; 
+    }
+    .weather-forcast-body {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  
+    .weather-info {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
   }
-}
+  @media screen and (max-width: 480px) {
+    .container {
+      width: 90%;
+    }
+    .weather-header {
+      flex-direction: column;
+  
+    }
+    
+    .weather-forcast-body {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  
+    .weather-info {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+    
+  }
+  
