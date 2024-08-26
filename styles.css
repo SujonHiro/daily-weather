@@ -94,9 +94,6 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
 }
-.weather-forcast-body::-webkit-scrollbar {
-  display: none;
-}
 
 .weather-forcast {
   background-color: var(--container-color);
