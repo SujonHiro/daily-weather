@@ -9,7 +9,7 @@ const weatherSearch = document.querySelector(".weather-search");
 const weatherType = document.querySelector(".weather-type");
 
 const api = {
-  base_api: "http://api.weatherapi.com/v1/",
+  base_api: "https://api.weatherapi.com/v1/",
   key: "b064254d243b43b8962100827242508",
 };
 
@@ -28,6 +28,7 @@ function toFahrenheit(celsius) {
 function updateTemperatureDisplay() {
   const weatherTemperature = document.querySelector(".weather-temperature");
   const weatherRealFeel = document.querySelector(".weather-realfeel");
+  const weatherWind = document.querySelector(".weather-wind");
 
   if (currentWeatherData) {
     const temp = isCelsius
@@ -36,6 +37,7 @@ function updateTemperatureDisplay() {
     const realFeel = isCelsius
       ? currentWeatherData.current.feelslike_c
       : toFahrenheit(currentWeatherData.current.feelslike_c);
+      const wind=isCelsius?currentWeatherData.current.windchill_c:toFahrenheit(currentWeatherData.current.windchill_f)
 
     weatherTemperature.innerHTML = `${temp.toFixed(1)}&#176 ${
       isCelsius ? "C" : "F"
@@ -43,6 +45,7 @@ function updateTemperatureDisplay() {
     weatherRealFeel.innerHTML = `${realFeel.toFixed(1)}&#176 ${
       isCelsius ? "C" : "F"
     }`;
+    weatherWind.innerHTML = `${wind.toFixed(1)} m/s`;
   }
 }
 
@@ -155,7 +158,7 @@ function displayWeather(weatherData) {
   );
 
   const weatherHumidity = document.querySelector(".weather-humidity");
-  const weatherWind = document.querySelector(".weather-wind");
+
   const weatherPressure = document.querySelector(".weather-pressure");
 
   const icon = `https:${weatherData.current.condition.icon}`;
@@ -168,7 +171,7 @@ function displayWeather(weatherData) {
   weatherForecastTypeText.innerHTML = `<h4>${weatherData.current.condition.text}</h4>`;
 
   weatherHumidity.innerHTML = `${weatherData.current.humidity}%`;
-  weatherWind.innerHTML = `${weatherData.current.windchill_c} m/s`;
+  
   weatherPressure.innerHTML = `${weatherData.current.pressure_mb.toFixed()} hPa`;
   updateTemperatureDisplay();
   futureForcast(weatherData);
