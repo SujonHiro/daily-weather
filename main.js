@@ -37,17 +37,10 @@ function updateTemperatureDisplay() {
     const realFeel = isCelsius ? currentWeatherData.current.feelslike_c : toFahrenheit(currentWeatherData.current.feelslike_c);
     const wind = isCelsius ? currentWeatherData.current.windchill_c : toFahrenheit(currentWeatherData.current.windchill_f);
 
-    weatherTemperature.innerHTML = `${temp.toFixed(1)}&#176 ${isCelsius ? "C" : "F"}`;
-    weatherRealFeel.innerHTML = `${realFeel.toFixed(1)}&#176 ${isCelsius ? "C" : "F"}`;
+    weatherTemperature.innerHTML = `${temp.toFixed()}&#176 ${isCelsius ? "C" : "F"}`;
+    weatherRealFeel.innerHTML = `${realFeel.toFixed()}&#176 ${isCelsius ? "C" : "F"}`;
     weatherWind.innerHTML = `${wind.toFixed(1)} m/s`;
   }
-}
-
-function convertToAMPM(timeString) {
-  let [hour, minute] = timeString.split(":");
-  let ampm = hour >= 12 ? "PM" : "AM";
-  hour = hour % 12 || 12;
-  return `${hour}:${minute} ${ampm}`;
 }
 
 function Customgetday(dataString, getOnlyDay = false) {
@@ -62,6 +55,15 @@ function Customgetday(dataString, getOnlyDay = false) {
 
   return getOnlyDay ? day : `${day}, ${month} ${date}, ${year}`;
 }
+
+function convertToAMPM(timeString) {
+  let [hour, minute] = timeString.split(":");
+  let ampm = hour >= 12 ? "PM" : "AM";
+  hour = hour % 12 || 12;
+  return `${hour}:${minute} ${ampm}`;
+}
+
+
 
 // Display Functions
 function displayWeather(weatherData) {
@@ -98,8 +100,8 @@ function futureForcast(weatherData) {
       `<div class="weather-forcast">
         <p>${Customgetday(item.date, true)}</p>
         <div><img src=${item.day.condition.icon}></div>
-        <p>min: ${isCelsius ? item.day.mintemp_c : toFahrenheit(item.day.mintemp_c).toFixed(1)}&#176 ${isCelsius ? "C" : "F"}</p>
-        <p>max: ${isCelsius ? item.day.maxtemp_c : toFahrenheit(item.day.maxtemp_c).toFixed(1)}&#176 ${isCelsius ? "C" : "F"}</p>
+        <p>min: ${isCelsius ? item.day.mintemp_c : toFahrenheit(item.day.mintemp_c).toFixed()}&#176 ${isCelsius ? "C" : "F"}</p>
+        <p>max: ${isCelsius ? item.day.maxtemp_c : toFahrenheit(item.day.maxtemp_c).toFixed()}&#176 ${isCelsius ? "C" : "F"}</p>
       </div>`
     )
     .join("");
