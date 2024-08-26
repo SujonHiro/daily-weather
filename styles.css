@@ -36,7 +36,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 .weather-name-icon {
   display: flex;
@@ -152,6 +152,18 @@ body {
   opacity: 0.8;
 }
 
+.weather-type{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  color: white;
+}
+.weather-type-btn{
+  padding: 2px 5px;
+  font-size: 15px;
+}
 @media screen and (max-width: 992px) {
     .container {
       width: 90%;
@@ -196,6 +208,9 @@ body {
     .weather-header {
       flex-direction: column;
   
+    }
+    .weather-search input {
+      width: 200px;
     }
     
     .weather-forcast-body {
