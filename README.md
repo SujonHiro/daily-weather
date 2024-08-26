@@ -2,6 +2,8 @@
 
 # Weather Application
 
+Api : https://www.weatherapi.com
+
 Site Link: https://daily-weather-24.netlify.app/
 
 This is a simple weather application that allows users to search for weather information by city. The application fetches weather data from the WeatherAPI and displays current weather conditions along with a 7-day forecast. Users can toggle between Celsius and Fahrenheit temperature units.
